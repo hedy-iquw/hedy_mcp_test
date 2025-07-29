@@ -1,0 +1,12 @@
+{
+  "servers": {
+    "hedys-mcp": {
+      "type": "stdio",
+      "command": "uvicorn",
+      "args": [
+        "hedys_mcp.main:app",
+        "--reload"
+      ]
+    }
+  }
+}
