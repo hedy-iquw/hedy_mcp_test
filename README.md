@@ -26,7 +26,6 @@ The server implements several tools:
   - Updates server state and notifies clients of resource changes
 - update-note: Updates an existing note
 - delete-note: Deletes a note
-- get-joke: Fetches a random joke from the internet
 - deborahs_jokes: Returns a random joke from Deborah's personal collection
 
 ## HTTP API (Streaming/ASGI mode)
