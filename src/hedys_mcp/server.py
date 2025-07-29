@@ -153,11 +153,7 @@ async def handle_list_tools() -> list[types.Tool]:
                 "required": ["name"],
             },
         ),
-        types.Tool(
-            name="get-joke",
-            description="Fetch a random joke from the internet",
-            inputSchema={"type": "object", "properties": {}, "required": []},
-        ),
+        # get-joke tool removed
         types.Tool(
             name="deborahs_jokes",
             description="Get a random joke from Deborah's personal collection.",
@@ -228,21 +224,7 @@ async def handle_call_tool(
                 text=f"Deleted note '{note_name}'",
             )
         ]
-    elif name == "get-joke":
-        import httpx
-        async with httpx.AsyncClient() as client:
-            resp = await client.get("https://official-joke-api.appspot.com/random_joke")
-            if resp.status_code == 200:
-                joke = resp.json()
-                joke_text = f"{joke.get('setup','')} {joke.get('punchline','')}"
-            else:
-                joke_text = "Failed to fetch joke."
-        return [
-            types.TextContent(
-                type="text",
-                text=joke_text,
-            )
-        ]
+    # get-joke tool removed
     elif name == "deborahs_jokes":
         import random
         print("deborahs_jokes tool was called!")
